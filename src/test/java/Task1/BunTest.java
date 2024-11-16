@@ -26,12 +26,13 @@ public class BunTest {
     public static Object[] Jack() {
         Database database = new Database();
 
-        return database.availableBuns().stream().map(bun -> new Object[]{bun, bun.getName()}).toArray();
+        return database.availableBuns().stream().map(bun -> new Object[]{bun}).toArray();
     }
 
-    public BunTest(Bun bun, String expectedName) {
+    public BunTest(Bun bun) {
         this.bun = new Bun(bun.getName(), bun.getPrice());
     }
+
 
     @Before
     public void setUp() {
